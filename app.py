@@ -27,7 +27,7 @@ def load_artifacts():
 
     return model, scaler
 
-model, scaler = load_artifacts()
+model, scaler = load_artifacts(requirements.txt)
 
 # ----------------------------------
 # Feature inputs
@@ -61,5 +61,6 @@ if st.button("Predict Wine Quality"):
 
     # Predict
     prediction = model.predict(scaled_input)
+
 
     st.success(f"🍷 Predicted Wine Quality: **{int(prediction[0])}**")
